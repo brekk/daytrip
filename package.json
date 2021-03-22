@@ -1,0 +1,28 @@
+{
+  "name": "daytrip",
+  "bin": {
+    "daytrip": "daytrip.js"
+  },
+  "dependencies": {
+    "ensorcel": "^0.0.2",
+    "envtrace": "^0.0.2",
+    "fast-glob": "^3.2.5",
+    "fluture": "^14.0.0",
+    "konan": "^2.1.1",
+    "madge": "^4.0.2",
+    "precinct": "^8.1.0",
+    "ramda": "^0.27.1",
+    "torpor": "^0.0.4",
+    "xtrace": "^0.3.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^17.1.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^11.2.0",
+    "eslint": "^7.22.0",
+    "eslint-config-sorcerers": "^0.0.7",
+    "prettier": "^2.2.1",
+    "prettier-eslint": "^12.0.0",
+    "rollup-plugin-add-shebang": "^0.3.1"
+  }
+}
