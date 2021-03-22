@@ -1,6 +1,6 @@
 import fg from 'fast-glob'
 import { readFile } from 'torpor'
-import { fork, Future, chain, parallel } from 'fluture'
+import { fork as rawFork, Future, chain, parallel } from 'fluture'
 import { trace } from 'xtrace'
 import {
   __ as $,
@@ -25,11 +25,8 @@ const glob = dir =>
     fg(`${dir}/**/*.*`).catch(bad).then(good)
     return function cancel() {}
   })
-
 const pretack = curry((raw, x) => [raw, x])
-
 const keysOf = curry((pr, raw) => pipe(propOr({}, pr), keys)(raw))
-
 const getAllDependencies = pipe(
   of,
   ap([
@@ -50,7 +47,11 @@ const isDependency = curry((pkg, dep) =>
   )(pkg)
 )
 
-const daytrip = curry((aliases, pkg, dir) =>
+export const fork = curry((bad, good, future) =>
+  rawFork(bad)(good)(future)
+)
+
+export const daytrip = curry((aliases, pkg, dir) =>
   pipe(
     glob,
     map(
@@ -76,8 +77,7 @@ const daytrip = curry((aliases, pkg, dir) =>
         )(file)
       )
     ),
-    chain(parallel(100)),
-    fork(console.warn)(console.log)
+    chain(parallel(100))
   )(dir)
 )
 

@@ -1,5 +1,7 @@
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 var fg = require('fast-glob');
 var torpor = require('torpor');
 var fluture = require('fluture');
@@ -17,11 +19,8 @@ const glob = dir =>
     fg__default['default'](`${dir}/**/*.*`).catch(bad).then(good);
     return function cancel() {}
   });
-
 ramda.curry((raw, x) => [raw, x]);
-
 const keysOf = ramda.curry((pr, raw) => ramda.pipe(ramda.propOr({}, pr), ramda.keys)(raw));
-
 const getAllDependencies = ramda.pipe(
   ramda.of,
   ramda.ap([
@@ -40,6 +39,10 @@ const isDependency = ramda.curry((pkg, dep) =>
     getAllDependencies,
     ramda.either(ramda.includes(dep), ramda.includes(preslash(dep)))
   )(pkg)
+);
+
+const fork = ramda.curry((bad, good, future) =>
+  fluture.fork(bad)(good)(future)
 );
 
 const daytrip = ramda.curry((aliases, pkg, dir) =>
@@ -68,9 +71,10 @@ const daytrip = ramda.curry((aliases, pkg, dir) =>
         )(file)
       )
     ),
-    fluture.chain(fluture.parallel(100)),
-    fluture.fork(console.warn)(console.log)
+    fluture.chain(fluture.parallel(100))
   )(dir)
 );
 
-module.exports = daytrip;
+exports.daytrip = daytrip;
+exports.default = daytrip;
+exports.fork = fork;

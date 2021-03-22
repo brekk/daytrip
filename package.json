@@ -1,5 +1,6 @@
 {
   "name": "daytrip",
+  "version": "0.0.0",
   "bin": {
     "daytrip": "daytrip.js"
   },
