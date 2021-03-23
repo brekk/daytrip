@@ -1,1 +1,4 @@
 extends: sorcerers
+rules:
+  no-unused-vars:
+   - "error"

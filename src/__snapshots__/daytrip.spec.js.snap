@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`daytrip 1`] = `
+Array [
+  Object {
+    "dependencies": Array [
+      "./files",
+      "./dependencies",
+    ],
+    "file": "src/daytrip.js",
+    "modules": Array [
+      "torpor",
+      "fluture",
+      "ramda",
+      "precinct",
+    ],
+  },
+  Object {
+    "dependencies": Array [
+      "../package.json",
+      "./daytrip",
+      "./utils",
+    ],
+    "file": "src/daytrip.spec.js",
+    "modules": Array [],
+  },
+  Object {
+    "dependencies": Array [
+      "./string",
+    ],
+    "file": "src/dependencies.js",
+    "modules": Array [
+      "ramda",
+    ],
+  },
+  Object {
+    "dependencies": Array [],
+    "file": "src/files.js",
+    "modules": Array [
+      "fast-glob",
+      "fluture",
+    ],
+  },
+  Object {
+    "dependencies": Array [
+      "./files",
+      "./utils",
+    ],
+    "file": "src/files.spec.js",
+    "modules": Array [],
+  },
+  Object {
+    "dependencies": Array [
+      "./daytrip",
+      "./utils",
+    ],
+    "file": "src/index.js",
+    "modules": Array [],
+  },
+  Object {
+    "dependencies": Array [],
+    "file": "src/string.js",
+    "modules": Array [
+      "ramda",
+    ],
+  },
+  Object {
+    "dependencies": Array [
+      "./string",
+    ],
+    "file": "src/string.spec.js",
+    "modules": Array [],
+  },
+  Object {
+    "dependencies": Array [],
+    "file": "src/utils.js",
+    "modules": Array [
+      "fluture",
+      "ramda",
+    ],
+  },
+  Object {
+    "dependencies": Array [
+      "./utils",
+    ],
+    "file": "src/utils.spec.js",
+    "modules": Array [],
+  },
+  Object {
+    "dependencies": Array [],
+    "file": "src/__snapshots__/daytrip.spec.js.snap",
+    "modules": Array [],
+  },
+  Object {
+    "dependencies": Array [],
+    "file": "src/__snapshots__/files.spec.js.snap",
+    "modules": Array [],
+  },
+]
+`;

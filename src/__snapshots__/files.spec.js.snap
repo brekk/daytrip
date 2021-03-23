@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`glob 1`] = `
+Array [
+  "/Users/brekk/work/daytrip/src/daytrip.js",
+  "/Users/brekk/work/daytrip/src/daytrip.spec.js",
+  "/Users/brekk/work/daytrip/src/dependencies.js",
+  "/Users/brekk/work/daytrip/src/files.js",
+  "/Users/brekk/work/daytrip/src/files.spec.js",
+  "/Users/brekk/work/daytrip/src/index.js",
+  "/Users/brekk/work/daytrip/src/string.js",
+  "/Users/brekk/work/daytrip/src/string.spec.js",
+  "/Users/brekk/work/daytrip/src/utils.js",
+  "/Users/brekk/work/daytrip/src/utils.spec.js",
+]
+`;

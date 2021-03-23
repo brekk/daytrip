@@ -7,9 +7,7 @@ import pkg from './package.json'
 const external = (pkg && pkg.dependencies
   ? Object.keys(pkg.dependencies)
   : []
-).concat([
-  `path`,
-])
+).concat([`path`])
 
 const plugins = [
   json(),
@@ -19,10 +17,9 @@ const plugins = [
 
 export default [
   {
-    input: `src/daytrip.js`,
+    input: `src/index.js`,
     external,
     output: [{ file: pkg.bin.daytrip, format: `cjs` }],
     plugins: plugins
   }
-  
 ]
